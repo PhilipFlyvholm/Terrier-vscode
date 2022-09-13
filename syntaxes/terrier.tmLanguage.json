@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Terrier",
+	"patterns": [
+		{
+			"include": "#reserved_keywords"
+		},
+		{
+			"include": "#attributes"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"reserved_keywords": {
+			"patterns": [
+				{
+					"name": "keyword.reserved.import.terrier",
+					"begin": "\\bimport\\b\\s*",
+					"end": "\\s*from",
+					"patterns": [
+						{
+							"name": "variable.other.property.importName.terrier",
+							"match": "[a-zA-Z]*"
+						}
+					]
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.terrier",
+					"match": "\\b[a-zA-Z][a-zA-Z0-9]*\\b"
+				}
+			]
+		},
+		"attributes": {
+			"patterns": [
+				{
+					"name": "variable.other.property.terrier",
+					"match": "[a-zA-Z\\-]*="
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.terrier",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.terrier",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.double.terrier",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.terrier",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.terrier"
+}

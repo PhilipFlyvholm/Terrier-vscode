@@ -1,0 +1,25 @@
+{
+  "name": "terrier-lang",
+  "displayName": "Terrier",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "terrier",
+      "aliases": ["Terrier", "terrier"],
+      "extensions": [".ter",".terrier"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "terrier",
+      "scopeName": "source.terrier",
+      "path": "./syntaxes/terrier.tmLanguage.json"
+    }]
+  }
+}
