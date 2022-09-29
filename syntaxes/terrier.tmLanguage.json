@@ -3,6 +3,9 @@
 	"name": "Terrier",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#reserved_keywords"
 		},
 		{
@@ -16,6 +19,23 @@
 		}
 	],
 	"repository": {
+		"comments":{
+			"patterns": [
+				{
+					"begin": "<!--",
+					"end": "--\\s*>",
+					"name": "comment.unbuffered.block.terrier",
+					"patterns": [{
+						"match": "--",
+						"name": "invalid.illegal.comment.comment.block.terrier"
+					}]
+				},
+				{
+					"name": "comment.line.double-slash",
+					"match": "\/\/.*"
+				}
+			]
+		},
 		"reserved_keywords": {
 			"patterns": [
 				{
